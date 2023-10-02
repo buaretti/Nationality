@@ -43,9 +43,9 @@ function clicou() {
     }
 
     if (nomeContemNumeros && paisOrigemContemNumeros) {
-        nameerro.textContent = "Insira um nome válido.";
+        nameerro.textContent = "Please enter a valid name.";
         nameerro.style.display = "block";
-        paiserro.textContent = "Insira um país válido.";
+        paiserro.textContent = "Please enter a valid country.";
         paiserro.style.display = "block";
         setTimeout(function () {
             nameerro.style.display = "none";
@@ -56,7 +56,7 @@ function clicou() {
 
     // Verifique individualmente e exiba mensagens de erro apropriadas
     if (nomeContemNumeros) {
-        nameerro.textContent = "Insira um nome válido.";
+        nameerro.textContent = "Please enter a valid name.";
         nameerro.style.display = "block";
         setTimeout(function () {
             nameerro.style.display = "none";
@@ -65,7 +65,7 @@ function clicou() {
     }
 
     if (paisOrigemContemNumeros) {
-        paiserro.textContent = "Insira um país válido.";
+        paiserro.textContent = "Please enter a valid country.";
         paiserro.style.display = "block";
         setTimeout(function () {
             paiserro.style.display = "none";
@@ -74,7 +74,7 @@ function clicou() {
     }
 
     if (paisorigem.length < 2) {
-        paiserro.textContent = "O país deve ter pelo menos 2 caracteres.";
+        paiserro.textContent = "The country must be at least 2 characters long.";
         paiserro.style.display = "block";
 
         setTimeout(function () {
@@ -84,7 +84,7 @@ function clicou() {
     }
 
     if (nome.length < 3 || nome.length > 20) {
-        nameerro.textContent = "O nome deve ter entre 3 e 20 caracteres.";
+        nameerro.textContent = "The name must be between 3 and 20 characters long.";
         nameerro.style.display = "block";
 
         setTimeout(function () {
@@ -99,6 +99,7 @@ function clicou() {
         "Estados Unidos",
         "United States",
         "United States of America",
+        "US",
         "Brasil",
         "BR",
         "Brazil",
@@ -156,46 +157,46 @@ function clicou() {
         "Turkey",
         "TR",
         "Noruega", "Norway",
-        "NO", 
+        "NO",
         "Denmark",
-        "DK", 
-        "Holanda", 
+        "DK",
+        "Holanda",
         "Netherlands",
-        "NL", 
-        "Nova Zelândia", 
+        "NL",
+        "Nova Zelândia",
         "New Zealand",
-        "NZ", 
-        "Singapura", 
+        "NZ",
+        "Singapura",
         "Singapore",
-        "SG", 
-        "Suíça", 
+        "SG",
+        "Suíça",
         "Switzerland",
-        "CH", 
-        "Bélgica", 
+        "CH",
+        "Bélgica",
         "Belgium",
-        "BE", 
-        "Áustria", 
+        "BE",
+        "Áustria",
         "Austria",
-        "AT", 
-        "Irlanda", 
+        "AT",
+        "Irlanda",
         "Ireland",
-        "IE", 
-        "Chile", 
+        "IE",
         "Chile",
-        "CL", 
-        "Coreia do Sul", 
+        "Chile",
+        "CL",
+        "Coreia do Sul",
         "South Korea",
-        "KR", 
-        "Malásia", 
+        "KR",
+        "Malásia",
         "Malaysia",
-        "MY", 
-        "Tailândia", 
+        "MY",
+        "Tailândia",
         "Thailand",
-        "TH", 
-        "Finlândia", 
+        "TH",
+        "Finlândia",
         "Finland",
-        "FI", 
-        "Polônia", 
+        "FI",
+        "Polônia",
         "Poland",
         "PL"
 
@@ -204,7 +205,7 @@ function clicou() {
     ];
 
     if (!paisValidos.includes(paisorigem)) {
-        paiserro.textContent = "Insira um país válido.";
+        paiserro.textContent = "Please enter a valid country.";
         paiserro.style.display = "block";
 
         setTimeout(function () {
@@ -217,26 +218,28 @@ function clicou() {
     bandeiras.style.display = "none";
 
     if (
-        paisorigem == "EUA" ||
         paisorigem == "USA" ||
-        paisorigem == "Estados Unidos"
+        paisorigem == "United States" ||
+        paisorigem == "United States of America" ||
+        paisorigem == "US" ||
+        paisorigem == "USA"
     ) {
-        res.innerHTML = nome + ", Você é Estadunidense! 🇺🇸";
+        res.innerHTML = nome + ", You are American! 🇺🇸";
         exp.innerHTML =
-            "Os Estados Unidos da América, frequentemente chamados de EUA, são uma nação diversificada e influente localizada na América do Norte. Com uma população de mais de 330 milhões de pessoas, os EUA são conhecidos por sua cultura rica e variada, composta por uma mistura de tradições de todo o mundo.";
+            "The United States of America, often called the USA, is a diverse and influential nation located in North America. With a population of over 330 million people, the USA is known for its rich and varied culture, composed of a blend of traditions from around the world.";
     }
 
     if (
-        paisorigem == "Irlanda" ||
+        paisorigem == "Ireland" ||
         paisorigem == "IE"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Irlandês! ☘️";
+            res.innerHTML = nome + ", You are Irish! ☘️";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Irlandesa! ☘️";
+            res.innerHTML = nome + ", You are Irish! ☘️";
         }
         exp.innerHTML =
-            "A Irlanda é conhecida por sua cultura celta, paisagens verdes e pubs animados. Ela é famosa por suas tradições musicais e festivais, como o Dia de São Patrício.";
+            "Ireland is known for its Celtic culture, green landscapes, and lively pubs. It is famous for its musical traditions and festivals, such as St. Patrick's Day.";
     }
 
     if (
@@ -244,279 +247,273 @@ function clicou() {
         paisorigem == "CL"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Chileno! 🇨🇱";
+            res.innerHTML = nome + ", You are Chilean! 🇨🇱";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Chilena! 🇨🇱";
+            res.innerHTML = nome + ", You are Chilean! 🇨🇱";
         }
         exp.innerHTML =
-            "O Chile é um país sul-americano conhecido por sua geografia variada, que inclui desertos, florestas e montanhas. É famoso por sua produção de vinho e beleza natural única.";
+            "Chile is a South American country known for its diverse geography, including deserts, forests, and mountains. It is famous for its wine production and unique natural beauty.";
     }
 
     if (
-        paisorigem == "Coreia do Sul" ||
+        paisorigem == "South Korea" ||
         paisorigem == "KR"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Sul-Coreano! 🇰🇷";
+            res.innerHTML = nome + ", You are South Korean! 🇰🇷";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Sul-Coreana! 🇰🇷";
+            res.innerHTML = nome + ", You are South Korean! 🇰🇷";
         }
         exp.innerHTML =
-            "A Coreia do Sul é uma nação asiática conhecida por sua tecnologia avançada, cultura pop, como o K-pop, e culinária saborosa, incluindo kimchi e bulgogi.";
+            "South Korea is an Asian nation known for its advanced technology, pop culture like K-pop, and delicious cuisine, including kimchi and bulgogi.";
     }
 
     if (
-        paisorigem == "Malásia" ||
+        paisorigem == "Malaysia" ||
         paisorigem == "MY"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Malaio! 🇲🇾";
+            res.innerHTML = nome + ", You are Malaysian! 🇲🇾";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Malaia! 🇲🇾";
+            res.innerHTML = nome + ", You are Malaysian! 🇲🇾";
         }
         exp.innerHTML =
-            "A Malásia é um país do sudeste asiático conhecido por sua diversidade étnica, belas praias e florestas tropicais. Também é famosa por sua comida de rua, como o nasi lemak e o satay.";
+            "Malaysia is a Southeast Asian country known for its ethnic diversity, beautiful beaches, and tropical forests. It is also famous for its street food, such as nasi lemak and satay.";
     }
 
     if (
-        paisorigem == "Tailândia" ||
+        paisorigem == "Thailand" ||
         paisorigem == "TH"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Tailandês! 🇹🇭";
+            res.innerHTML = nome + ", You are Thai! 🇹🇭";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Tailandesa! 🇹🇭";
+            res.innerHTML = nome + ", You are Thai! 🇹🇭";
         }
         exp.innerHTML =
-            "A Tailândia é uma nação no sudeste asiático conhecida por suas praias tropicais, templos budistas e cozinha picante. É um destino popular para turistas de todo o mundo.";
+            "Thailand is a nation in Southeast Asia known for its tropical beaches, Buddhist temples, and spicy cuisine. It is a popular destination for tourists from around the world.";
     }
 
+
     if (
-        paisorigem == "Finlândia" ||
+        paisorigem == "Finland" ||
         paisorigem == "FI"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Finlandês! 🇫🇮";
+            res.innerHTML = nome + ", You are Finnish! 🇫🇮";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Finlandesa! 🇫🇮";
+            res.innerHTML = nome + ", You are Finnish! 🇫🇮";
         }
         exp.innerHTML =
-            "A Finlândia é um país nórdico conhecido por sua educação de alta qualidade, design inovador e belas paisagens naturais, incluindo lagos e florestas.";
+            "Finland is a Nordic country known for its high-quality education, innovative design, and beautiful natural landscapes, including lakes and forests.";
     }
 
     if (
-        paisorigem == "Polônia" ||
+        paisorigem == "Poland" ||
         paisorigem == "PL"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Polonês! 🇵🇱";
+            res.innerHTML = nome + ", You are Polish! 🇵🇱";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Polonesa! 🇵🇱";
+            res.innerHTML = nome + ", You are Polish! 🇵🇱";
         }
         exp.innerHTML =
-            "A Polônia é um país da Europa Central conhecido por sua rica história, arquitetura medieval e contribuições culturais, como Chopin e Marie Curie.";
+            "Poland is a Central European country known for its rich history, medieval architecture, and cultural contributions, such as Chopin and Marie Curie.";
     }
 
     if (
-        paisorigem == "Suíça" ||
+        paisorigem == "Switzerland" ||
         paisorigem == "CH"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Suíço! 🇨🇭";
+            res.innerHTML = nome + ", You are Swiss! 🇨🇭";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Suíça! 🇨🇭";
+            res.innerHTML = nome + ", You are Swiss! 🇨🇭";
         }
         exp.innerHTML =
-            "A Suíça é um país europeu conhecido por sua beleza natural deslumbrante, incluindo os Alpes suíços. É famosa por sua precisão e qualidade, especialmente em relojoaria e chocolates.";
+            "Switzerland is a European country known for its stunning natural beauty, including the Swiss Alps. It is famous for its precision and quality, especially in watchmaking and chocolates.";
     }
 
     if (
-        paisorigem == "Bélgica" ||
+        paisorigem == "Belgium" ||
         paisorigem == "BE"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Belga! 🇧🇪";
+            res.innerHTML = nome + ", You are Belgian! 🇧🇪";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Belga! 🇧🇪";
+            res.innerHTML = nome + ", You are Belgian! 🇧🇪";
         }
         exp.innerHTML =
-            "A Bélgica é um país europeu conhecido por sua culinária deliciosa, incluindo chocolates e waffles belgas. Também é famosa por suas cervejas e história rica.";
+            "Belgium is a European country known for its delicious cuisine, including Belgian chocolates and waffles. It is also famous for its beers and rich history.";
     }
 
     if (
-        paisorigem == "Áustria" ||
+        paisorigem == "Austria" ||
         paisorigem == "AT"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Austríaco! 🇦🇹";
+            res.innerHTML = nome + ", You are Austrian! 🇦🇹";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Austríaca! 🇦🇹";
+            res.innerHTML = nome + ", You are Austrian! 🇦🇹";
         }
         exp.innerHTML =
-            "A Áustria é um país europeu conhecido por sua música clássica, especialmente compositores como Mozart e Beethoven. Também é famosa por suas paisagens alpinas.";
+            "Austria is a European country known for its classical music, especially composers like Mozart and Beethoven. It is also famous for its Alpine landscapes.";
     }
 
-
     if (
-        paisorigem == "Noruega" ||
+        paisorigem == "Norway" ||
         paisorigem == "NO"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Norueguês! 🇳🇴";
+            res.innerHTML = nome + ", You are Norwegian! 🇳🇴";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Norueguesa! 🇳🇴";
+            res.innerHTML = nome + ", You are Norwegian! 🇳🇴";
         }
         exp.innerHTML =
-            "A Noruega é um país escandinavo na Europa, conhecido por suas paisagens deslumbrantes, fiordes majestosos e alta qualidade de vida. É também famoso por ser um dos países mais felizes do mundo.";
+            "Norway is a Scandinavian country in Europe known for its stunning landscapes, majestic fjords, and high quality of life. It's also famous for being one of the happiest countries in the world.";
     }
 
     if (
-        paisorigem == "Dinamarca" ||
+        paisorigem == "Denmark" ||
         paisorigem == "DK"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Dinamarquês! 🇩🇰";
+            res.innerHTML = nome + ", You are Danish! 🇩🇰";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Dinamarquesa! 🇩🇰";
+            res.innerHTML = nome + ", You are Danish! 🇩🇰";
         }
         exp.innerHTML =
-            "A Dinamarca é um país nórdico na Europa, conhecido por seu design moderno, estilo de vida descontraído e rica herança cultural. É o lar de muitos contos de fadas e histórias famosas, incluindo as obras de Hans Christian Andersen.";
+            "Denmark is a Nordic country in Europe known for its modern design, relaxed lifestyle, and rich cultural heritage. It is the home of many fairy tales and famous stories, including the works of Hans Christian Andersen.";
     }
 
     if (
-        paisorigem == "Holanda" ||
+        paisorigem == "Netherlands" ||
         paisorigem == "NL"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Holandês! 🇳🇱";
+            res.innerHTML = nome + ", You are Dutch! 🇳🇱";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Holandesa! 🇳🇱";
+            res.innerHTML = nome + ", You are Dutch! 🇳🇱";
         }
         exp.innerHTML =
-            "A Holanda, também conhecida como Países Baixos, é um país europeu famoso por seus moinhos de vento, canais pitorescos e flores, especialmente tulipas. É uma nação com uma rica história e cultura.";
+            "The Netherlands, also known as the Netherlands, is a European country famous for its windmills, picturesque canals, and flowers, especially tulips. It is a nation with a rich history and culture.";
     }
 
     if (
-        paisorigem == "Nova Zelândia" ||
+        paisorigem == "New Zealand" ||
         paisorigem == "NZ"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Neozelandês! 🇳🇿";
+            res.innerHTML = nome + ", You are New Zealander! 🇳🇿";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Neozelandesa! 🇳🇿";
+            res.innerHTML = nome + ", You are New Zealander! 🇳🇿";
         }
         exp.innerHTML =
-            "A Nova Zelândia é um país insular no sudoeste do Oceano Pacífico, conhecido por sua beleza natural deslumbrante, incluindo montanhas, praias e fiordes. É também um lugar popular para esportes radicais, como o bungee jumping.";
+            "New Zealand is an island country in the southwest Pacific Ocean, known for its stunning natural beauty, including mountains, beaches, and fjords. It is also a popular destination for extreme sports like bungee jumping.";
     }
 
     if (
-        paisorigem == "Singapura" ||
+        paisorigem == "Singapore" ||
         paisorigem == "SG"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Cingapuriano! 🇸🇬";
+            res.innerHTML = nome + ", You are Singaporean! 🇸🇬";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Cingapuriana! 🇸🇬";
+            res.innerHTML = nome + ", You are Singaporean! 🇸🇬";
         }
         exp.innerHTML =
-            "Singapura é uma cidade-estado no sudeste da Ásia, conhecida por sua modernidade, limpeza e diversidade cultural. É um centro financeiro e tecnológico e oferece uma rica mistura de culturas e culinárias.";
+            "Singapore is a city-state in Southeast Asia known for its modernity, cleanliness, and cultural diversity. It is a financial and technological hub and offers a rich blend of cultures and cuisines.";
     }
 
     if (
-        paisorigem == "África do Sul" ||
         paisorigem == "South Africa" ||
         paisorigem == "ZA"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Sul-Africano! 🇿🇦";
+            res.innerHTML = nome + ", You are South African! 🇿🇦";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Sul-Africana! 🇿🇦";
+            res.innerHTML = nome + ", You are South African! 🇿🇦";
         }
         exp.innerHTML =
-            "A África do Sul é um país diversificado localizado no extremo sul da África. É conhecido por sua paisagem variada, que inclui savanas, montanhas, praias e desertos. A nação também possui uma rica diversidade cultural, com influências africanas, europeias e asiáticas.";
+            "South Africa is a diverse country located at the southern tip of Africa. It is known for its varied landscape, including savannas, mountains, beaches, and deserts. The nation also has a rich cultural diversity with African, European, and Asian influences.";
     }
 
     if (
-        paisorigem == "Suécia" ||
         paisorigem == "Sweden" ||
         paisorigem == "SE"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Sueco! 🇸🇪";
+            res.innerHTML = nome + ", You are Swedish! 🇸🇪";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Sueca! 🇸🇪";
+            res.innerHTML = nome + ", You are Swedish! 🇸🇪";
         }
         exp.innerHTML =
-            "A Suécia é uma nação escandinava no norte da Europa, conhecida por sua qualidade de vida elevada, paisagens naturais deslumbrantes e design inovador. É um país moderno com uma rica herança histórica e cultural.";
+            "Sweden is a Scandinavian nation in northern Europe, known for its high quality of life, stunning natural landscapes, and innovative design. It is a modern country with a rich historical and cultural heritage.";
     }
 
     if (
-        paisorigem == "Grécia" ||
         paisorigem == "Greece" ||
         paisorigem == "GR"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Grego! 🇬🇷";
+            res.innerHTML = nome + ", You are Greek! 🇬🇷";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Grega! 🇬🇷";
+            res.innerHTML = nome + ", You are Greek! 🇬🇷";
         }
         exp.innerHTML =
-            "A Grécia é um país no sudeste da Europa, conhecido por sua rica herança histórica que inclui a civilização antiga e os famosos deuses do Olimpo. Além disso, a Grécia oferece belas ilhas, praias e uma culinária mediterrânea saborosa.";
+            "Greece is a country in southeastern Europe known for its rich historical heritage, including ancient civilization and the famous gods of Olympus. Additionally, Greece offers beautiful islands, beaches, and delicious Mediterranean cuisine.";
     }
 
     if (
-        paisorigem == "Turquia" ||
         paisorigem == "Turkey" ||
         paisorigem == "TR"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Turco! 🇹🇷";
+            res.innerHTML = nome + ", You are Turkish! 🇹🇷";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Turca! 🇹🇷";
+            res.innerHTML = nome + ", You are Turkish! 🇹🇷";
         }
         exp.innerHTML =
-            "A Turquia é um país transcontinental, situado entre a Europa e a Ásia. Ela é conhecida por sua rica história, incluindo o Império Otomano, e possui uma paisagem diversificada que inclui montanhas, praias e desertos. A culinária turca também é famosa em todo o mundo.";
+            "Turkey is a transcontinental country situated between Europe and Asia. It is known for its rich history, including the Ottoman Empire, and has a diverse landscape that includes mountains, beaches, and deserts. Turkish cuisine is also famous worldwide.";
     }
 
     if (
-        paisorigem == "Austrália" ||
         paisorigem == "Australia" ||
         paisorigem == "AU"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Australiano! 🇦🇺";
+            res.innerHTML = nome + ", You are Australian! 🇦🇺";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Australiana! 🇦🇺";
+            res.innerHTML = nome + ", You are Australian! 🇦🇺";
         }
         exp.innerHTML =
-            "A Austrália é um país incrivelmente diversificado e vasto, conhecido por sua natureza deslumbrante, praias deslumbrantes e vida selvagem única. É o lar da Grande Barreira de Coral, dos cangurus e do surf de classe mundial. A Austrália também tem uma cultura indígena rica e uma população acolhedora.";
+            "Australia is an incredibly diverse and vast country, known for its stunning nature, breathtaking beaches, and unique wildlife. It is home to the Great Barrier Reef, kangaroos, and world-class surfing. Australia also has a rich Indigenous culture and a welcoming population.";
     }
 
     if (
-        paisorigem == "México" ||
+        paisorigem == "Mexico" ||
         paisorigem == "MX"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Mexicano! 🇲🇽";
+            res.innerHTML = nome + ", You are Mexican! 🇲🇽";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Mexicana! 🇲🇽";
+            res.innerHTML = nome + ", You are Mexican! 🇲🇽";
         }
         exp.innerHTML =
-            "O México é um país vibrante na América do Norte, famoso por sua comida deliciosa, cultura colorida e ruínas antigas, como as de Chichen Itzá. É o berço do mariachi e do tequila, e possui uma mistura fascinante de tradições indígenas e influências espanholas.";
+            "Mexico is a vibrant country in North America, famous for its delicious cuisine, colorful culture, and ancient ruins like Chichen Itza. It is the birthplace of mariachi and tequila and has a fascinating blend of indigenous traditions and Spanish influences.";
     }
 
     if (
-        paisorigem == "Egito" ||
         paisorigem == "Egypt" ||
         paisorigem == "EG"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Egípcio! 🇪🇬";
+            res.innerHTML = nome + ", You are Egyptian! 🇪🇬";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Egípcia! 🇪🇬";
+            res.innerHTML = nome + ", You are Egyptian! 🇪🇬";
         }
         exp.innerHTML =
-            "O Egito é um país do nordeste da África conhecido por sua antiga civilização, com monumentos icônicos como as pirâmides de Gizé e a Esfinge. Além de sua rica herança histórica, o Egito também tem uma costa deslumbrante ao longo do Mar Vermelho e uma cultura diversificada.";
+            "Egypt is a country in northeastern Africa known for its ancient civilization, with iconic monuments like the pyramids of Giza and the Sphinx. In addition to its rich historical heritage, Egypt also has a stunning Red Sea coastline and a diverse culture.";
     }
 
     if (
@@ -524,167 +521,164 @@ function clicou() {
         paisorigem == "AR"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Argentino! 🇦🇷";
+            res.innerHTML = nome + ", You are Argentine! 🇦🇷";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Argentina! 🇦🇷";
+            res.innerHTML = nome + ", You are Argentine! 🇦🇷";
         }
         exp.innerHTML =
-            "A Argentina é uma nação sul-americana conhecida por sua paixão pelo futebol, tango e carnes deliciosas. Possui paisagens impressionantes, como a Patagônia e as Cataratas do Iguaçu, e é um destino popular para amantes da natureza e da cultura.";
+            "Argentina is a South American nation known for its passion for soccer, tango, and delicious meats. It boasts stunning landscapes, such as Patagonia and Iguazu Falls, and is a popular destination for nature and culture enthusiasts.";
     }
 
     if (
-        paisorigem == "Alemanha" ||
         paisorigem == "Germany" ||
         paisorigem == "DE"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Alemão! 🇩🇪";
+            res.innerHTML = nome + ", You are German! 🇩🇪";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Alemã! 🇩🇪";
+            res.innerHTML = nome + ", You are German! 🇩🇪";
         }
         exp.innerHTML =
-            "A Alemanha é uma nação europeia conhecida por sua eficiência, tecnologia de ponta e rica herança cultural. É famosa por suas cervejas, salsichas e por ser o berço da Bauhaus, um movimento artístico influente. A Alemanha desempenhou um papel importante na história da filosofia, literatura, música, ciência e indústria automobilística.";
+            "Germany is a European nation known for its efficiency, cutting-edge technology, and rich cultural heritage. It's famous for its beers, sausages, and as the birthplace of the Bauhaus, an influential art movement. Germany has played a significant role in the history of philosophy, literature, music, science, and the automotive industry.";
     }
 
     if (
-        paisorigem == "Japão" ||
         paisorigem == "Japan" ||
         paisorigem == "JP"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Japonês! 🇯🇵";
+            res.innerHTML = nome + ", You are Japanese! 🇯🇵";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Japonesa! 🇯🇵";
+            res.innerHTML = nome + ", You are Japanese! 🇯🇵";
         }
         exp.innerHTML =
-            "O Japão é uma ilha nação no leste da Ásia conhecida por sua cultura única, tecnologia avançada e paisagens deslumbrantes. É o lar do sushi, do sumô e de belos templos históricos. O Japão também é famoso por suas contribuições para a indústria de videogames e pela gentileza de seu povo.";
+            "Japan is an island nation in East Asia known for its unique culture, advanced technology, and stunning landscapes. It's home to sushi, sumo wrestling, and beautiful historic temples. Japan is also famous for its contributions to the video game industry and the kindness of its people.";
     }
 
     if (
-        paisorigem == "Brasil" ||
-        paisorigem == "BR" ||
-        paisorigem == "Brazil"
+        paisorigem == "Brazil" ||
+        paisorigem == "BR"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Brasileiro! 🇧🇷";
+            res.innerHTML = nome + ", You are Brazilian! 🇧🇷";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Brasileira! 🇧🇷";
+            res.innerHTML = nome + ", You are Brazilian! 🇧🇷";
         }
         exp.innerHTML =
-            "O Brasil é o maior país da América do Sul e um dos países mais diversos e culturalmente ricos do mundo. Com uma geografia que abrange florestas tropicais, praias deslumbrantes, planícies vastas e altas montanhas, o Brasil é conhecido por sua beleza natural impressionante.";
+            "Brazil is the largest country in South America and one of the most culturally diverse and rich countries in the world. With a geography that spans tropical forests, stunning beaches, vast plains, and high mountains, Brazil is known for its breathtaking natural beauty.";
     }
 
     if (
-        paisorigem == "Espanha" ||
         paisorigem == "Spain" ||
         paisorigem == "ES"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Espanhol! 🇪🇸";
+            res.innerHTML = nome + ", You are Spanish! 🇪🇸";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Espanhola! 🇪🇸";
+            res.innerHTML = nome + ", You are Spanish! 🇪🇸";
         }
         exp.innerHTML =
-            "A Espanha é um país localizado no sudoeste da Europa, conhecido por sua rica história, cultura vibrante e paisagens diversas. A Espanha é o lar de uma variedade de regiões geográficas, desde as praias ensolaradas da Costa del Sol até as majestosas montanhas dos Pirenéus.";
+            "Spain is a country located in southwestern Europe, known for its rich history, vibrant culture, and diverse landscapes. Spain is home to a variety of geographic regions, from the sunny beaches of the Costa del Sol to the majestic Pyrenees mountains.";
     }
 
     if (
-        paisorigem == "Inglaterra" ||
         paisorigem == "England" ||
         paisorigem == "GB"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Britânico! 🇬🇧";
+            res.innerHTML = nome + ", You are British! 🇬🇧";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Britânica! 🇬🇧";
+            res.innerHTML = nome + ", You are British! 🇬🇧";
         }
         exp.innerHTML =
-            "A Inglaterra é uma nação historicamente rica e culturalmente diversa que faz parte do Reino Unido, composto por quatro nações, incluindo Escócia, País de Gales e Irlanda do Norte. Localizada na ilha da Grã-Bretanha, a Inglaterra tem uma identidade distinta e uma história fascinante.";
+            "England is a historically rich and culturally diverse nation that is part of the United Kingdom, comprising four nations, including Scotland, Wales, and Northern Ireland. Located on the island of Great Britain, England has a distinct identity and a fascinating history.";
     }
 
     if (
-        paisorigem == "França" ||
+        paisorigem == "France" ||
         paisorigem == "FR" ||
         paisorigem == "France"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Francês! 🇫🇷";
+            res.innerHTML = nome + ", You are French! 🇫🇷";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Francesa! 🇫🇷";
+            res.innerHTML = nome + ", You are French! 🇫🇷";
         }
         exp.innerHTML =
-            'A França, localizada no coração da Europa Ocidental, é uma nação que se destaca por sua rica cultura, história e contribuições significativas para as artes, culinária e moda. É conhecida como "a terra da liberdade, igualdade e fraternidade" e é famosa por sua revolução que inspirou valores democráticos em todo o mundo.';
+            'France, located in the heart of Western Europe, is a nation known for its rich culture, history, and significant contributions to arts, cuisine, and fashion. It is known as "the land of liberty, equality, and fraternity" and is famous for its revolution that inspired democratic values worldwide.';
     }
 
     if (
-        paisorigem == "Itália" ||
+        paisorigem == "Italy" ||
         paisorigem == "Italy" ||
         paisorigem == "IT"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é italiano! 🇮🇹";
+            res.innerHTML = nome + ", You are Italian! 🇮🇹";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é italiana! 🇮🇹";
+            res.innerHTML = nome + ", You are Italian! 🇮🇹";
         }
         exp.innerHTML =
-            "A Itália é uma nação icônica localizada na região sul da Europa, conhecida por sua rica história, cultura vibrante, culinária deliciosa e contribuições significativas para a arte e a ciência. Com uma herança que remonta ao Império Romano, a Itália desempenhou um papel fundamental na formação da civilização ocidental.";
+            "Italy is an iconic nation located in Southern Europe, known for its rich history, vibrant culture, delicious cuisine, and significant contributions to art and science. With a heritage dating back to the Roman Empire, Italy has played a fundamental role in shaping Western civilization.";
     }
 
     if (paisorigem == "Portugal" || paisorigem == "PT") {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Português! 🇵🇹";
+            res.innerHTML = nome + ", You are Portuguese! 🇵🇹";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Portuguesa! 🇵🇹";
+            res.innerHTML = nome + ", You are Portuguese! 🇵🇹";
         }
         exp.innerHTML =
-            "Portugal, situado na Península Ibérica, é uma nação encantadora e historicamente rica, conhecida por suas belas paisagens, cultura cativante e influências globais que datam dos tempos dos grandes exploradores.";
+            "Portugal, situated on the Iberian Peninsula, is a charming and historically rich nation known for its beautiful landscapes, captivating culture, and global influences dating back to the times of great explorers.";
     }
 
     if (
-        paisorigem == "Índia" ||
+        paisorigem == "India" ||
         paisorigem == "India" ||
         paisorigem == "IN"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Indiano! 🇮🇳";
+            res.innerHTML = nome + ", You are Indian! 🇮🇳";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Indiana! 🇮🇳";
+            res.innerHTML = nome + ", You are Indian! 🇮🇳";
         }
         exp.innerHTML =
-            "A Índia, localizada no sul da Ásia, é uma nação diversificada e fascinante, conhecida por sua vasta história, cultura rica e uma população extraordinariamente grande e diversificada.";
+            "India, located in South Asia, is a diverse and fascinating nation known for its vast history, rich culture, and an extraordinarily large and diverse population.";
     }
 
     if (paisorigem == "China" || paisorigem == "CN") {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Chinês! 🇨🇳";
+            res.innerHTML = nome + ", You are Chinese! 🇨🇳";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Chinesa! 🇨🇳";
+            res.innerHTML = nome + ", You are Chinese! 🇨🇳";
         }
         exp.innerHTML =
-            "A China, localizada no leste da Ásia, é uma nação vasta e diversificada, conhecida por sua longa história, cultura rica e influência global crescente. Com uma população de mais de 1,4 bilhão de pessoas, é o país mais populoso do mundo.";
+            "China, located in East Asia, is a vast and diverse nation known for its long history, rich culture, and growing global influence. With a population of over 1.4 billion people, it is the most populous country in the world.";
     }
 
     if (
-        paisorigem == "Rússia" ||
+        paisorigem == "Russia" ||
         paisorigem == "Russia" ||
         paisorigem == "RU"
     ) {
         if (generoMasculino) {
-            res.innerHTML = nome + ", Você é Russo! 🇷🇺";
+            res.innerHTML = nome + ", You are Russian! 🇷🇺";
         } else if (generoFeminino) {
-            res.innerHTML = nome + ", Você é Russa! 🇷🇺";
+            res.innerHTML = nome + ", You are Russian! 🇷🇺";
         }
         exp.innerHTML =
-            "A Rússia, o maior país do mundo em termos de extensão geográfica, é uma nação vasta e diversificada localizada no norte da Eurásia. É conhecida por sua história rica e complexa, cultura única e paisagens impressionantes.";
+            "Russia, the largest country in the world in terms of geographical area, is a vast and diverse nation located in northern Eurasia. It is known for its rich and complex history, unique culture, and stunning landscapes.";
     }
 
     if (
-        paisorigem == "Canadá" ||
+        paisorigem == "Canada" ||
         paisorigem == "Canada" ||
         paisorigem == "CA"
     ) {
-        res.innerHTML = nome + ", Você é Canadense! 🇨🇦";
+        res.innerHTML = nome + ", You are Canadian! 🇨🇦";
         exp.innerHTML =
-            "O Canadá, localizado na América do Norte, é uma nação vasta e diversificada conhecida por sua paisagem deslumbrante, qualidade de vida elevada e diversidade cultural.";
+            "Canada, located in North America, is a vast and diverse nation known for its stunning landscapes, high quality of life, and cultural diversity.";
     }
+
+
 }
