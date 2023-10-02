@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nacionalidade</title>
+    <link rel="stylesheet" href="styles/geralstyle.css">
+    <link rel="stylesheet" href="styles/mq-style.css">
+    <link rel="shortcut icon" href="imgs/earth-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h1>Nationality 🌎</h1>
+      <p>Find out the status of your nationality here!</p>
+    </header>
+    <main>
+      <h2>Fill in the fields below &downarrow;</h2>
+      <p class="desc">
+        Enter your name, gender and country of origin to see the result.
+      </p>
+      <p>
+        <label for="nome">Name:</label>
+      </p>
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        autocomplete="name"
+        placeholder="Cleiton G Santos"
+        oninput="this.value = this.value.replace(/[0-9]/g, '')"
+        />
+        <div class="erro-msg" id="name-erro">Required field.</div>
+        
+        <p>
+          <label for="paisorigem">Country of Origin:</label>
+        </p>
+        <input
+        type="text"
+        name="paisorigem"
+        id="paisorigem"
+        autocomplete="country-name"
+        placeholder="USA"
+        oninput="this.value = this.value.replace(/[0-9]/g, '')"
+        />
+      <div class="erro-msg" id="pais-erro">Required field.</div>
+      <p>
+        <label id="generolabel">Gender:</label> <br />
+        <input
+          type="radio"
+          name="genero"
+          value="masculino"
+          id="masculino"
+          checked
+        />
+        <label class="gen" for="masculino">Male</label>
+        <input type="radio" name="genero" value="feminino" id="feminino" />
+        <label class="gen" for="feminino">Female</label>
+      </p>
+
+      <input id="botao" type="button" value="Result" />
+      <img id="bandeiras" src="imgs/bandeiras.jpg" alt="Bandeiras" />
+      <div id="res"></div>
+      <div id="exp"></div>
+    </main>
+    <footer>
+      <p>
+        Site developed by
+        <a href="https://github.com/buaretti" target="_blank"
+          >&copy;Marcelo Buaretti</a
+        >
+      </p>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
