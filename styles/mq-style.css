@@ -138,6 +138,7 @@
 
     #botao{
         transform: translate(130px, -138px);
+        margin-bottom: 80px;
     }
 
     input[type="radio"] {
@@ -163,6 +164,10 @@
         transform: translate(25px,-120px);
         width: 500px;
     }
+    
+    main > p.desc{
+        margin-bottom: 30px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -170,6 +175,10 @@
         width: 35vw;
         height: 60px;
         font-size: 1em;
+    }
+
+    main > p.desc{
+        margin-bottom: 30px;
     }
 
     main > p > label{
@@ -215,6 +224,7 @@
 
     #botao{
         transform: translate(180px, -146px);
+        margin-bottom: 60px;
     }
 
     input[type="radio"] {
@@ -237,7 +247,7 @@
     
     #exp{
         font-size: 1.1em;
-        transform: translate(25px,-120px);
+        transform: translate(0px,-120px);
         width: 700px;
     }
 }
@@ -258,6 +268,10 @@
 
     header p{
         font-size:1.4em;
+    }
+
+    main > p.desc{
+        margin-bottom: 30px;
     }
 
     img{
@@ -290,6 +304,7 @@
     }
 
     #botao{
+        margin-bottom: 50px;
         transform: translate(250px, -146px);
     }
 
